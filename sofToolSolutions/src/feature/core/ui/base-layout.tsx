@@ -21,12 +21,13 @@ export function BaseLayout({
 
   return (
     <div className={cn('relative flex min-h-screen bg-primary-50', className)}>
-      {navBar && <Navbar />}
+      {navBar &&
+       <Navbar  />}
       <div className='flex w-full flex-col px-5'>
         {header && (
-          <div className='bg-primary-500 h-20 rounded-md justify-between flex'> 
-             <h1 className='text-white font-semibold text-3xl p-2'> Bienvenido  </h1> 
-              <p className='mt-10 mx-5 text-white'>Fecha Ingreso: {dateRep}</p>
+          <div className='bg-secondary-200 h-20 rounded-md justify-between flex'> 
+             <h1 className='text-black font-semibold text-3xl p-2'> Bienvenido  </h1> 
+              <p className='md:mt-10 mt-4 mx-5 text-black'>Fecha Ingreso: {dateRep}</p>
           </div>
           // <Header subHeader={subHeader} specificAgent={specificAgent} valueStatusAgent={valueStatus10Agent} />
         )}
