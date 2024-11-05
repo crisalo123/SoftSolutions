@@ -49,7 +49,6 @@ export const ProductPage = () => {
            <p>{ ` Precio: $${dato.price}`}</p>
          </Card>
       ))}
- 
     </div>
     </BaseLayout>
   )
