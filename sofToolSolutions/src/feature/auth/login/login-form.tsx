@@ -75,7 +75,7 @@ export const LoginForm = ({ className }: { className?: string }) => {
           )}
         />
         <Button
-          className='text-md flex w-full gap-3 bg-primary-600 font-semibold hover:border-2 hover:border-primary-600 hover:bg-transparent hover:text-primary-600'
+          className='text-md flex w-full gap-3 bg-secondary-200 font-semibold hover:border-2 hover:border-secondary-400 hover:bg-transparent hover:text-secondary-200'
           type='submit'
           disabled={isLoading}
         >

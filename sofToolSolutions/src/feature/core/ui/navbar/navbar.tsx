@@ -21,7 +21,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <nav className='h-screen w-60 min-w-60 '>
-      <div className='fixed flex h-screen w-60 flex-col items-center justify-between bg-primary-500'>
+      <div className='fixed flex h-screen w-60 flex-col items-center justify-between bg-secondary-400'>
         <div>
            <div> 
             <img
@@ -29,7 +29,7 @@ export const Navbar: React.FC = () => {
               src={LogoSoft}
               alt='LOGO SoftSolutios'
             />
-            <h1 className='text-white font-semibold text-xl tracking-wider '>TrueQue.COM</h1>
+            <h1 className='text-black mt-10 font-semibold text-xl tracking-wider '>TrueQue.COM</h1>
             </div>
            
            <div className='mt-5'>
@@ -68,7 +68,7 @@ export const Navbar: React.FC = () => {
               {user?.role.toLowerCase()}
             </h3>
             <Button
-              className='h-[40px] w-[152px] bg-[#FF9302] text-lg  font-normal hover:bg-secondary-400'
+              className='h-[40px] w-[152px] bg-[#f1eee9] text-lg  text-black font-normal hover:bg-secondary-400'
               onClick={() => {
                 handleLogout()
               }}
