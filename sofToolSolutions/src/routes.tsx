@@ -3,10 +3,15 @@ import { useRoutes } from 'react-router-dom'
 import authRoutes from '@/feature/auth/routes'
 
 import adminRoutes from './feature/user/routes'
-import { useAuthStore } from './authStore';
+import { useAuthStore } from './feature/contex/AuthContext';
+
+
 
 export const AppRoutes: React.FC = () => {
-  const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
+  const { isAuthenticated} = useAuthStore();
+  
+  console.log(isAuthenticated)
+ 
 
   const roleRoutes = isAuthenticated ? [...authRoutes, ...adminRoutes] : authRoutes
 

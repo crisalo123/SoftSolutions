@@ -9,7 +9,15 @@ import  ecommers  from '@/feature/auth/assets/ecomers.jpg'
 import  banner  from '@/feature/auth/assets/Banner.png'
 
 
-export function Login() {
+
+
+
+
+
+
+export function LoginPage() {
+
+  
   return (
     <div className=' h-screen bg-primary-50 '>
       <Wrapper className='md:flex h-full items-center justify-center pt-14 md:pt-0 pr-2 md:pr-0 pl-2 md:pl-0'>

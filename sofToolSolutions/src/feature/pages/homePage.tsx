@@ -1,11 +1,15 @@
-import { useAuthStore } from "@/authStore";
+
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { BaseLayout } from "../core/ui/base-layout";
 
-import { Card } from "../core";
+import { Card, Spinner } from "../core";
 import { GiLunarModule } from "react-icons/gi";
 import { MdOutlineProductionQuantityLimits } from "react-icons/md";
+import { useAuthStore } from '../contex/AuthContext';
+
+
+
 
 
 
@@ -13,8 +17,10 @@ import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 
 export const HomePage = () => {
 
-  const { isAuthenticated } = useAuthStore();
+  const { isAuthenticated } = useAuthStore()
   const navigate = useNavigate();
+
+
    
   const [showNavBar, setShowNavBar] = useState(true);
    
@@ -35,7 +41,11 @@ export const HomePage = () => {
     return () => window.removeEventListener("resize", handleResize); 
   }, []);
 
-  if (!isAuthenticated) return null;
+  if (!isAuthenticated) return (
+     <Spinner />
+  );
+
+ 
 
   return (
     <BaseLayout

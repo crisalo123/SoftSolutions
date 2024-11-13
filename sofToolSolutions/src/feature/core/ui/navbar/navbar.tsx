@@ -8,16 +8,17 @@ import banner  from '@/feature/auth/assets/Banner.png'
 import { CustomItem } from './custom-item'
 import { CustomRouteObject } from '../../types/routes'
 import { Button } from '../button'
-import { useAuth } from '@/feature/hooks/useAuth'
+import { useAuth } from '@/feature/contex/AuthContext'
+
 
 export const Navbar: React.FC = () => {
 
-  const { handleLogout, user } = useAuth()
+  const { logout, user } = useAuth()
 
   const storedRoutes = localStorage.getItem('roleRoutes')
   const accessibleRoutes = storedRoutes ? JSON.parse(storedRoutes) : []
 
-
+ console.log(user)
 
   return (
     <nav className='h-screen w-60 min-w-60 '>
@@ -62,15 +63,15 @@ export const Navbar: React.FC = () => {
             <IoPerson className='text-3xl text-[#A0AEC0]' />
 
             <h2 className='max-w-48 text-xl font-bold capitalize text-white'>
-              {user?.username}
+              {user.firstName}
             </h2>
             <h3 className='pb-2 font-medium capitalize text-white'>
-              {user?.role.toLowerCase()}
+              rolename
             </h3>
             <Button
               className='h-[40px] w-[152px] bg-[#f1eee9] text-lg  text-black font-normal hover:bg-secondary-400'
               onClick={() => {
-                handleLogout()
+                logout()
               }}
             >
               Cerrar sesión
